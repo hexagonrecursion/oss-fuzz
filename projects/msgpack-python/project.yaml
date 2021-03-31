@@ -1,6 +1,6 @@
-homepage: "<your_project_homepage>"
+homepage: "https://msgpack.org/"
 language: python
-primary_contact: "<primary_contact_email>"
+primary_contact: "songofacandy@gmail.com"
 main_repo: "https://github.com/msgpack/msgpack-python.git"
 fuzzing_engines:
   - libfuzzer
