@@ -20,6 +20,8 @@ pip3 install .
 
 # build fuzzers
 # Based on https://google.github.io/oss-fuzz/getting-started/new-project-guide/python-lang/
+# prevent pyinstaller from picking up /src/msgpack-python/msgpack/ instead of /usr/local/lib/python3.8/site-packages/msgpack
+cd /
 for fuzzer in $(find $SRC -name '*_fuzzer.py'); do
   fuzzer_basename=$(basename -s .py $fuzzer)
   fuzzer_package=${fuzzer_basename}.pkg
