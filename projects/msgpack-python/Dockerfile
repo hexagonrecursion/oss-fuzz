@@ -16,7 +16,7 @@
 
 FROM gcr.io/oss-fuzz-base/base-builder
 # RUN apt-get update && apt-get install -y make autoconf automake libtool
-RUN pip install Cython
+RUN pip3 install Cython
 RUN git clone --depth 1 https://github.com/msgpack/msgpack-python.git msgpack-python
 WORKDIR msgpack-python
 COPY build.sh differential_fuzzer.py $SRC/
