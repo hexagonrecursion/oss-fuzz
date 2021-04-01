@@ -17,5 +17,6 @@
 FROM gcr.io/oss-fuzz-base/base-builder
 #RUN git clone --depth 1 https://github.com/msgpack/msgpack-python.git msgpack-python
 RUN git clone --depth 1 --branch fuzz --single-branch https://github.com/hexagonrecursion/msgpack-python.git msgpack-python
+RUN pip3 install pytest
 WORKDIR msgpack-python
 COPY build.sh $SRC/
