@@ -23,7 +23,8 @@ pip3 install .
 # prevent pyinstaller from picking up /src/msgpack-python/msgpack/ instead of /usr/local/lib/python3.8/site-packages/msgpack
 cd /
 
-for fuzzer in $(find $SRC -name '*_fuzzer.py'); do
+
+for fuzzer in $SRC/msgpack-python/fuzz/*_fuzzer.py; do
   fuzzer_basename=$(basename -s .py $fuzzer)
   fuzzer_package=${fuzzer_basename}.pkg
 
