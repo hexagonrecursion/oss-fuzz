@@ -30,7 +30,7 @@ for fuzzer in $(find $SRC -name '*_fuzzer.py'); do
   pyinstaller --distpath $OUT --onefile --name $fuzzer_package $fuzzer
 
   echo "#!/bin/sh
-# Without the next line infra/helper.py check_build does not think this is a valid fuzz target
+# Without the next comment infra/helper.py check_build does not think this is a valid fuzz target
 # LLVMFuzzerTestOneInput
 this_dir=\$(dirname \"\$0\")
 LD_PRELOAD=\$this_dir/sanitizer_with_fuzzer.so \
