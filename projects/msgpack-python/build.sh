@@ -38,4 +38,8 @@ LD_PRELOAD=\$this_dir/sanitizer_with_fuzzer.so \
 ASAN_OPTIONS=\$ASAN_OPTIONS:symbolize=1:external_symbolizer_path=\$this_dir/llvm-symbolizer:detect_leaks=0 \
 \$this_dir/$fuzzer_package \$@" > $OUT/$fuzzer_basename
   chmod u+x $OUT/$fuzzer_basename
+
+  if [ -d "$SRC/msgpack-python/fuzz/${fuzzer_basename}_seed_corpus" ]; then
+        zip -rj "$OUT/${fuzzer_basename}_seed_corpus.zip" "$SRC/msgpack-python/fuzz/${fuzzer_basename}_seed_corpus/"
+  fi
 done
